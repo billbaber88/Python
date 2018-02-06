@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+    <title>Gold</title>
+</head>
+
+<body>
+    <div>
+        <h1>Gold: {{ session['gold'] }}</h1>
+        <div class="fourths">
+            <h2>Farm</h2>
+            <p>earn 10-20 gold</p>
+            <form action="/process_money", method='post'>
+                <input type="submit" name="location" value="farm">
+            </form>
+        </div>
+
+        <div class="fourths">
+            <h2>Cave</h2>
+            <p>earn 5-10 gold</p>
+            <form action="/process_money", method='post'>
+                <input type="submit" name="location" value="cave">
+            </form>
+        </div>
+
+        <div class="fourths">
+            <h2>House</h2>
+            <p>earn 2-5 gold</p>
+            <form action="/process_money", method='post'>
+                <input type="submit" name="location" value="house">
+            </form>
+        </div>
+
+        <div class="fourths">
+            <h2>Casino</h2>
+            <p>earn/lose 0-50 gold</p>
+            <form action="/process_money", method='post'>
+                <input type="submit" name="location" value="casino">
+            </form>
+        </div>
+
+    </div>
+    <h3>Actions</h3>
+    <div>
+        {% for string in session['log'] %}
+            {% if "gained" in string %}
+            <p style="color:green;">{{ string }}</p>
+            {% else %}
+            <p style="color:red;">{{ string }}</p>
+            {% endif %}
+        {% endfor %}
+    </div
+</body>
+
+</html>

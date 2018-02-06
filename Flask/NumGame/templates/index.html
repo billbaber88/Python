@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the number game</h1>
+    <h2>Guess any number</h2>
+    <h3>between</h3>
+    <h4>1 and 100</h4>
+    <form method="GET">
+        <input action="/guess" type="text" name="number"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>{{ session['name'] }}</p>
+   
+
+</body>
+</html>
